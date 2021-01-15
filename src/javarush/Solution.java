@@ -4,33 +4,38 @@ import java.util.Arrays;
 
 public class Solution{
 
-        public static void main(String[]args){
+    public static void main(String[] args) {
 
-            int[] mass = new int[20];
-            for(int x = 0;x< mass.length; x++) {
-                mass[x]= (int) (Math.random()*30);
-                System.out.println(mass[x]);
 
+        int[] array = new int[20];
+        for (int x = 0; x < array.length; x++) {
+            array[x] = (int) (Math.random() * 30);
+            System.out.println(array[x]);
+        }
+
+        System.out.println();
+
+        for (int x = array.length-1; x > 1; x--) {
+            for (int v = 0; v < x; v++) {
+                if (array[v] > array[v + 1]) {
+                    int max = array[v];
+                    array[v] = array[v + 1];
+                    array[v + 1] = max;
+
+                }
             }
-            System.out.println();
+        }
 
-            Arrays.sort(mass);
-            System.out.println("Минимум равен" + " " + mass[0]);
-
-            System.out.println();
-            System.out.println("Максимум равен" + " " + mass[19]);
-
-            System.out.println();
-
-            int sum = 0;
-            for(int value : mass){
-                sum = sum+value;
-            }
-            double srednee = sum/ mass.length;
-            System.out.println("Среднее число равно" + " " + srednee);
+        System.out.println(array[0]);
+        System.out.println();
+        System.out.println(array[19]);
 
     }
-    }
+
+}
+
+
+
 
 
 
