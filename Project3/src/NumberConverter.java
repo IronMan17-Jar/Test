@@ -2,10 +2,8 @@ import java.util.Scanner;
 
 public class NumberConverter  {
 
-    static OperationsWithNumbers Numbers = new OperationsWithNumbers();
-
     public static String converter() {
-
+        OperationsWithNumbers Numbers = new OperationsWithNumbers();
         System.out.println("Введите число:");
         Scanner sc = new Scanner(System.in);
         String value = sc.next();
