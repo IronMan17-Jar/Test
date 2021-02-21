@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class NumberConverter {
+public class NumberConverter  {
 
     static OperationsWithNumbers Numbers = new OperationsWithNumbers();
 
-    public static void main(String[] args) {
+    public static String converter() {
 
         System.out.println("Введите число:");
         Scanner sc = new Scanner(System.in);
@@ -21,6 +21,7 @@ public class NumberConverter {
         } catch (NumberFormatException e) {
             System.out.println("Неверный формат");
         }
+        return value;
 
     }
 
