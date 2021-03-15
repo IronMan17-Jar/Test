@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class OperationsWithNumbers {
     private int[] arab = {1, 4, 5, 9, 10, 50, 100, 500, 1000};
     private String[] roman = {"I", "IV", "V", "IX", "X", "L", "C", "D", "M"};
