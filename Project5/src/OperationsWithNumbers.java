@@ -7,17 +7,17 @@ public class OperationsWithNumbers {
     private String[] roman = {"I", "IV", "V", "IX", "X", "L", "C", "D", "M"};
 
     public int romanToArab(String operationsWithNumbers) throws NumberFormatException {
-            int result = 0;
-            String num = operationsWithNumbers;
-            for(int i = 0;i < num.length() - 1;i++) {
-                if (numberProcessing(num.charAt(i)) < numberProcessing(num.charAt(i+1))) {
-                    result -= numberProcessing(num.charAt(i));
-                } else {
-                    result += numberProcessing(num.charAt(i));
-                }
+        int result = 0;
+        String num = operationsWithNumbers;
+        for(int i = 0;i < num.length() - 1;i++) {
+            if (numberProcessing(num.charAt(i)) < numberProcessing(num.charAt(i+1))) {
+                result -= numberProcessing(num.charAt(i));
+            } else {
+                result += numberProcessing(num.charAt(i));
             }
-            result += numberProcessing(num.charAt(num.length()-1));
-            return result;
+        }
+        result += numberProcessing(num.charAt(num.length()-1));
+        return result;
     }
     private int numberProcessing(char roman){
         switch(roman) {

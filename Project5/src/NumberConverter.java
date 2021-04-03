@@ -1,4 +1,4 @@
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class NumberConverter {
@@ -16,8 +16,8 @@ public class NumberConverter {
                 } else {
                     System.out.println("Вы ввели: " + numbers.romanToArab(value));
                 }
-            } catch (NumberFormatException e) {
-                
+            }catch (NumberFormatException e) {
+
                 throw new ConvertationException("вы ввели не число!");
             }
         }
@@ -27,25 +27,26 @@ public class NumberConverter {
     private boolean checkNumber(String value) throws ConvertationException{
         try {
             int num = Integer.parseInt(value);
-            if(num<=500){
+            if(num<=500 && num>0){
                 return true;
+            }else if(num<0){
+                throw new ConvertationException("арабское меньше 0");
             }
             else {
                 throw new ConvertationException("арабское число больше 500");
             }
         } catch (NumberFormatException e) {
+            char ch = '-';
             int num = numbers.romanToArab(value);
             if(num==0){
                 throw new ConvertationException("ввели не верные данные!");
             }
-            else if(num<=500){
+            else if(num<=500 && num>0){
                 return true;
             }
             else {
                 throw new ConvertationException("римское число больше 500");
             }
         }
-
     }
-
 }
