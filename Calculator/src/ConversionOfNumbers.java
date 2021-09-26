@@ -15,7 +15,6 @@ public class ConversionOfNumbers {
             intValue+=number;
         }
         return intValue;
-
     }
     private static int numberProcessing(char symbol){
         switch (symbol) {

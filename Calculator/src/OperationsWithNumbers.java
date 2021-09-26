@@ -6,7 +6,7 @@ public class OperationsWithNumbers {
 
     public  void outputOnDisplay() throws ValueException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите данные:");
+        System.out.println("Введите данные: ");
         String[] cell = scanner.nextLine().split(" ");
         int first = 0;
         int second = 0;
