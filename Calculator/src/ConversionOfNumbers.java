@@ -3,19 +3,21 @@ public class ConversionOfNumbers {
 
     static OperationsWithNumbers ow1 = new OperationsWithNumbers();
 
-    public static int romanToArab(String operationsWithNumbers) throws NumberFormatException {
-        int intValue = 0;
+   public static int romanToArab(String operationsWithNumbers) throws NumberFormatException {
+       int result = 0;
+       String num = operationsWithNumbers;
+       //for(int i=num.length()-1;i>=0;i--){
+       for(int i = 0;i < num.length() - 1;i++) {
+           if (numberProcessing(num.charAt(i)) < numberProcessing(num.charAt(i+1))) {
+               result -= numberProcessing(num.charAt(i));
+           } else {
+               result += numberProcessing(num.charAt(i));
+           }
+       }
+       result += numberProcessing(num.charAt(num.length()-1));
+       return result;
+   }
 
-        for(int x = 0; x<operationsWithNumbers.length();x++){
-            char ch = operationsWithNumbers.charAt(x);
-            int number = numberProcessing(ch);
-            if(number==-1){
-                throw new NumberFormatException("Недопустимый формат!");
-            }
-            intValue+=number;
-        }
-        return intValue;
-    }
     private static int numberProcessing(char symbol){
         switch (symbol) {
             case 'I': return 1;
